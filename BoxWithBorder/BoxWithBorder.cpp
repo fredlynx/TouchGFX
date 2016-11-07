@@ -61,6 +61,29 @@ touchgfx::Rect touchgfx::BoxWithBorder::getSolidRect() const
 	return (alpha != 255) ? touchgfx::Rect() : touchgfx::Rect(0, 0, getWidth(), getHeight());
 }
 
+/******************************************************************************
+*
+* @brief     This file is a Box widget for TouchGFX.
+*
+* @author    Fredlynx
+*
+******************************************************************************/
+
+#include <gui\common\BoxWithBorder.hpp>
+
+
+/**
+ * @fn touchgfx::Rect BoxWithBorder::getSolidRect() const;
+ *
+ * @brief Get the solid state of the box.
+ *
+ *        Get the solid state of the box.
+ */
+touchgfx::Rect touchgfx::BoxWithBorder::getSolidRect() const
+{
+	return (alpha != 255) ? touchgfx::Rect() : touchgfx::Rect(0, 0, getWidth(), getHeight());
+}
+
 /**
  * @fn void BoxWithBorder::draw(const Rect& area) const;
  *
@@ -102,15 +125,15 @@ void touchgfx::BoxWithBorder::draw(const touchgfx::Rect& invalidatedArea) const
 			{
 				if (fillMode != GRADIENT_H)
 				{
-					out_r = ((color >> 11)  * (x - 0) + (endColor >> 11) * (rect.width - x)) / (rect.width - 0);
-					out_g = (((color >> 5) & ((1u << 6) - 1))  * (x - 0) + ((endColor >> 5) & ((1u << 6) - 1)) * (rect.width - x)) / (rect.width - 0);
-					out_b = ((color & ((1u << 5) - 1))  * (x - 0) + (endColor & ((1u << 5) - 1)) * (rect.width - x)) / (rect.width - 0);
+					out_r = ((color >> 11)  * x + (endColor >> 11) * (rect.width - x)) / rect.width;
+					out_g = (((color >> 5) & ((1u << 6) - 1))  * x + ((endColor >> 5) & ((1u << 6) - 1)) * (rect.width - x)) / rect.width;
+					out_b = ((color & ((1u << 5) - 1))  * x + (endColor & ((1u << 5) - 1)) * (rect.width - x)) / rect.width;
 				}
 				else
 				{
-					out_r = ((color >> 11)  * (y - 0) + (endColor >> 11) * (rect.height - y)) / (rect.height - 0);
-					out_g = (((color >> 5) & ((1u << 6) - 1))  * (y - 0) + ((endColor >> 5) & ((1u << 6) - 1)) * (rect.height - y)) / (rect.height - 0);
-					out_b = ((color & ((1u << 5) - 1))  * (y - 0) + (endColor & ((1u << 5) - 1)) * (rect.height - y)) / (rect.height - 0);
+					out_r = ((color >> 11)  * y + (endColor >> 11) * (rect.height - y)) / rect.height;
+					out_g = (((color >> 5) & ((1u << 6) - 1))  * y + ((endColor >> 5) & ((1u << 6) - 1)) * (rect.height - y)) / rect.height;
+					out_b = ((color & ((1u << 5) - 1))  * y + (endColor & ((1u << 5) - 1)) * (rect.height - y)) / rect.height;
 				}
 				newColor = ((out_r << 11) | (out_g << 5) | out_b);
 			}
