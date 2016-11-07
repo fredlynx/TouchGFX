@@ -16,7 +16,7 @@ Functional description exemple
 // Add this to your gui view cpp file
 
 // Add your view Header file
-#include <gui/xxxx/xxxx.hpp>
+\#include <gui/xxxx/xxxx.hpp>
 // Add color header file for RGB888 to RGB565 conversion
 #include <touchgfx/Color.hpp>
 
