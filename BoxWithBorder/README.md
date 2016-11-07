@@ -2,6 +2,7 @@ Purpose
 ========
 
 ![Box with Border and gradient Backgound](BoxWithBorder.png "Box with Border and gradient Backgound")
+
 The purpose of the Box widget, is to add options for Border and fill backgound gradient
 
 TouchGFX Version
