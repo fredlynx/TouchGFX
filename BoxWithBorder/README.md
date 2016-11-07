@@ -12,9 +12,9 @@ This widget was created and tested using TouchGFX version 4.6.1
 
 Functional description exemple
 ==============================
-//---------------------------------------------------
+
 // Add this to your gui view cpp file
-//---------------------------------------------------
+
 // Add your view Header file
 #include <gui/xxxx/xxxx.hpp>
 // Add color header file for RGB888 to RGB565 conversion
@@ -36,9 +36,9 @@ Functional description exemple
 	  add(Bbox);
 
 
-//---------------------------------------------------
+
 // Add this to your gui view hpp file
-//---------------------------------------------------
+
 // Add BoxWithBorder Header file
 #include <gui/common/BoxWithBorder.hpp>
 
